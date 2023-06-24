@@ -7,7 +7,7 @@ const BlogController = require("../controller/BlogController");
 const Authenticate = require("../middleware/Authenticate");
 const { check,body, validationResult } = require('express-validator');
 
-router.post("/getAllUsers",Authenticate, adminController.getAllUsers);
+router.post("/getAllUsers",adminController.getAllUsers);
 router.post("/adminLogin",
 check('email').not().isEmpty().withMessage('Email is required!!'),
 check('password').not().isEmpty().withMessage('Password is required!!'),
